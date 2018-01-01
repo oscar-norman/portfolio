@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html ng-app="quizApp">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+    <script src="js/quiz.js"></script>
+</head>
+<body>
+
+<div class="row" ng-controller="QuizController as quiz">
+
+  <div class="col-md-2"></div>
+  <div class="col-md-8" ng-show="quiz.counter == null">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Question {{quiz.currentQuestion + 1}} (of {{quiz.questions.length}})</h1>
+        <img src="images/{{quiz.questions[quiz.currentQuestion].image}}" class="img-responsive">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="radio">
+          <label>
+            <input type="radio" name="optionsRadios" ng-value="0" ng-model="quiz.questions[quiz.currentQuestion].answer">
+            {{quiz.questions[quiz.currentQuestion].options[0]}}
+          </label>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="radio">
+          <label>
+            <input type="radio" name="optionsRadios" ng-value="1" ng-model="quiz.questions[quiz.currentQuestion].answer">
+            {{quiz.questions[quiz.currentQuestion].options[1]}}
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="radio">
+          <label>
+            <input type="radio" name="optionsRadios" ng-value="2" ng-model="quiz.questions[quiz.currentQuestion].answer">
+            {{quiz.questions[quiz.currentQuestion].options[2]}}
+          </label>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="radio">
+          <label>
+            <input type="radio" name="optionsRadios" ng-value="3" ng-model="quiz.questions[quiz.currentQuestion].answer">
+            {{quiz.questions[quiz.currentQuestion].options[3]}}
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <button ng-show="quiz.currentQuestion > 0" ng-click="quiz.previous()">Previous</button>
+      <button
+        ng-disabled="quiz.questions[quiz.currentQuestion].answer == null"
+        ng-click="quiz.next()">Next</button>
+    </div>
+  </div>
+  <div class="col-md-8" ng-show="quiz.counter != null">
+    <h1 ng-if="quiz.counter == 1">You got 1 correct answer!</h1>
+    <h1 ng-if="quiz.counter != 1">You got {{ quiz.counter }} correct answers!</h1>
+    <button ng-click="quiz.restart()">Restart quiz!</button>
+  </div>
+  <div class="col-md-2"></div>
+
+</div>
+
+</body>
+</html>
