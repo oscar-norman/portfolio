@@ -11,10 +11,18 @@
 
   <div class="col-md-2"></div>
   <div class="col-md-8" ng-show="quiz.counter == null">
+    <ul class="nav nav-tabs">
+      <li role="presentation" ng-class="{'active': quiz.mode=='image'}"><a ng-click="quiz.changeMode('image')">Image</a></li>
+      <li role="presentation" ng-class="{'active': quiz.mode=='video'}"><a ng-click="quiz.changeMode('video')">Video</a></li>
+      <li role="presentation" ng-class="{'active': quiz.mode=='audio'}"><a ng-click="quiz.changeMode('audio')">Audio</a></li>
+    </ul>
     <div class="row">
       <div class="col-md-12">
         <h1>Question {{quiz.currentQuestion + 1}} (of {{quiz.questions.length}})</h1>
-        <img src="images/{{quiz.questions[quiz.currentQuestion].image}}" class="img-responsive">
+        {{quiz.questions[quiz.currentQuestion].audio}}
+        <img ng-if="quiz.mode=='image'" src="images/{{quiz.questions[quiz.currentQuestion].file}}" class="img-responsive">
+        <video ng-if="quiz.mode=='video'" width="800" controls ng-src="videos/{{quiz.questions[quiz.currentQuestion].file}}" type="video/mp4"></video>
+        <audio ng-if="quiz.mode=='audio'" controls ng-src="audios/{{quiz.questions[quiz.currentQuestion].file}}" type="audio/mpeg"></audio>
       </div>
     </div>
     <div class="row">
@@ -59,7 +67,7 @@
         ng-show="quiz.currentQuestion > 0"
         ng-click="quiz.previous()">Previous</button>
       <button
-        class="btn btn-default"
+        class="btn btn-info"
         ng-disabled="quiz.questions[quiz.currentQuestion].answer == null"
         ng-click="quiz.next()">Next</button>
     </div>
