@@ -3,13 +3,34 @@ angular.module('quizApp', [])
 
     var quiz = this;
 
+    quiz.mode = 'image';
+
+    quiz.changeMode = function (mode) {
+      quiz.mode = mode;
+      quiz.questions = questions[quiz.mode];
+      quiz.restart();
+    }
+
     quiz.currentQuestion = 0;
 
-    quiz.questions = [
-      {image:'indianajones.jpg', options: [ 'Star Wars', 'Jurassic Park', 'Predetors', 'Raiders of the lost ark' ], correct: 3, answer: null},
-      {image:'starwars.jpg', options: [ 'Moonligthning', 'Star Wars', 'Star Trek', 'Raiders of the lost ark' ], correct: 1, answer: null},
-      {image:'backtothefuture.jpg', options: [ 'Back to the future', 'The Goonies', 'Gremlins', 'Teenwolf' ], correct: 0, answer: null}
-    ];
+    var questions = {
+      'image': [
+        {file:'indianajones.jpg', options: [ 'Star Wars', 'Jurassic Park', 'Predetors', 'Raiders of the lost ark' ], correct: 3, answer: null},
+        {file:'starwars.jpg', options: [ 'Moonligthning', 'Star Wars', 'Star Trek', 'Raiders of the lost ark' ], correct: 1, answer: null},
+        {file:'backtothefuture.jpg', options: [ 'Back to the future', 'The Goonies', 'Gremlins', 'Teenwolf' ], correct: 0, answer: null}
+      ],
+      'video': [
+        {file:'indianajones.mp4', options: [ 'Star Wars', 'Jurassic Park', 'Predetors', 'Raiders of the lost ark' ], correct: 3, answer: null},
+        {file:'starwars.mp4', options: [ 'Moonligthning', 'Star Wars', 'Star Trek', 'Raiders of the lost ark' ], correct: 1, answer: null},
+        {file:'backtothefuture.mp4', options: [ 'Back to the future', 'The Goonies', 'Gremlins', 'Teenwolf' ], correct: 0, answer: null}
+      ],
+      'audio': [
+        {file:'indianajones.mp3', options: [ 'Star Wars', 'Jurassic Park', 'Predetors', 'Raiders of the lost ark' ], correct: 3, answer: null},
+        {file:'starwars.jpg', options: [ 'Moonligthning', 'Star Wars', 'Star Trek', 'Raiders of the lost ark' ], correct: 1, answer: null},
+        {file:'backtothefuture.jpg', options: [ 'Back to the future', 'The Goonies', 'Gremlins', 'Teenwolf' ], correct: 0, answer: null}
+      ]
+    }
+    quiz.questions = questions[quiz.mode];
 
     quiz.counter = null;
 
