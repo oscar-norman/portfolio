@@ -54,8 +54,12 @@
       </div>
     </div>
     <div class="row">
-      <button ng-show="quiz.currentQuestion > 0" ng-click="quiz.previous()">Previous</button>
       <button
+        class="btn btn-default"
+        ng-show="quiz.currentQuestion > 0"
+        ng-click="quiz.previous()">Previous</button>
+      <button
+        class="btn btn-default"
         ng-disabled="quiz.questions[quiz.currentQuestion].answer == null"
         ng-click="quiz.next()">Next</button>
     </div>
