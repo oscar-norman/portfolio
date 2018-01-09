@@ -6,9 +6,9 @@ angular.module('quizApp', [])
     quiz.currentQuestion = 0;
 
     quiz.questions = [
-      {image:'indianajones.jpg', options: [ 'Star Wars', 'Jurassic Park', 'Predetors', 'Raiders of the lost ark' ], correct: 3},
-      {image:'starwars.jpg', options: [ 'Moonligthning', 'Star Wars', 'Star Trek', 'Raiders of the lost ark' ], correct: 1},
-      {image:'backtothefuture.jpg', options: [ 'Back to the future', 'The Goonies', 'Gremlins', 'Teenwolf' ], correct: 0}
+      {image:'indianajones.jpg', options: [ 'Star Wars', 'Jurassic Park', 'Predetors', 'Raiders of the lost ark' ], correct: 3, answer: null},
+      {image:'starwars.jpg', options: [ 'Moonligthning', 'Star Wars', 'Star Trek', 'Raiders of the lost ark' ], correct: 1, answer: null},
+      {image:'backtothefuture.jpg', options: [ 'Back to the future', 'The Goonies', 'Gremlins', 'Teenwolf' ], correct: 0, answer: null}
     ];
 
     quiz.counter = null;
@@ -34,7 +34,7 @@ angular.module('quizApp', [])
         quiz.counter = null;
         quiz.currentQuestion = 0;
         for (var i = 0; i < quiz.questions.length; i++) {
-          delete quiz.questions[i].answer;
+          quiz.questions[i].answer = null;
         }
     }
 
