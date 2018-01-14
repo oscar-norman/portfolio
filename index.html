@@ -4,80 +4,85 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
     <script src="js/quiz.js" charset="UTF-8"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
 
 <div class="row" ng-controller="QuizController as quiz">
 
-  <div class="col-md-2"></div>
-  <div class="col-md-8" ng-show="quiz.counter == null">
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
     <ul class="nav nav-tabs">
       <li role="presentation" ng-class="{'active': quiz.mode=='image'}"><a ng-click="quiz.changeMode('image')">Image</a></li>
       <li role="presentation" ng-class="{'active': quiz.mode=='video'}"><a ng-click="quiz.changeMode('video')">Video</a></li>
       <li role="presentation" ng-class="{'active': quiz.mode=='audio'}"><a ng-click="quiz.changeMode('audio')">Audio</a></li>
     </ul>
-    <div class="row">
-      <div class="col-md-12">
-        <h1>Question {{quiz.currentQuestion + 1}} (of {{quiz.questions.length}})</h1>
-        {{quiz.questions[quiz.currentQuestion].audio}}
-        <img ng-if="quiz.mode=='image'" src="images/{{quiz.questions[quiz.currentQuestion].file}}" class="img-responsive">
-        <video ng-if="quiz.mode=='video'" width="800" controls ng-src="videos/{{quiz.questions[quiz.currentQuestion].file}}" type="video/mp4"></video>
-        <audio ng-if="quiz.mode=='audio'" controls ng-src="audios/{{quiz.questions[quiz.currentQuestion].file}}" type="audio/mpeg"></audio>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6">
-        <div class="radio">
-          <label>
-            <input type="radio" name="optionsRadios" ng-value="0" ng-model="quiz.questions[quiz.currentQuestion].answer">
-            {{quiz.questions[quiz.currentQuestion].options[0]}}
-          </label>
+    <div class="quiz-pane" ng-show="quiz.counter == null">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>Question {{quiz.currentQuestion + 1}} (of {{quiz.questions.length}})</h1>
+          {{quiz.questions[quiz.currentQuestion].audio}}
+          <img ng-if="quiz.mode=='image'" src="images/{{quiz.questions[quiz.currentQuestion].file}}" class="img-responsive">
+          <video ng-if="quiz.mode=='video'" width="800" controls ng-src="videos/{{quiz.questions[quiz.currentQuestion].file}}" type="video/mp4"></video>
+          <audio ng-if="quiz.mode=='audio'" controls ng-src="audios/{{quiz.questions[quiz.currentQuestion].file}}" type="audio/mpeg"></audio>
         </div>
       </div>
-      <div class="col-md-6">
-        <div class="radio">
-          <label>
-            <input type="radio" name="optionsRadios" ng-value="1" ng-model="quiz.questions[quiz.currentQuestion].answer">
-            {{quiz.questions[quiz.currentQuestion].options[1]}}
-          </label>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="radio">
+            <label ng-class="{'active': quiz.questions[quiz.currentQuestion].answer == 0}">
+              <input type="radio" name="optionsRadios" ng-value="0" ng-model="quiz.questions[quiz.currentQuestion].answer">
+              {{quiz.questions[quiz.currentQuestion].options[0]}}
+            </label>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="radio">
+            <label ng-class="{'active': quiz.questions[quiz.currentQuestion].answer == 1}">
+              <input type="radio" name="optionsRadios" ng-value="1" ng-model="quiz.questions[quiz.currentQuestion].answer">
+              {{quiz.questions[quiz.currentQuestion].options[1]}}
+            </label>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6">
-        <div class="radio">
-          <label>
-            <input type="radio" name="optionsRadios" ng-value="2" ng-model="quiz.questions[quiz.currentQuestion].answer">
-            {{quiz.questions[quiz.currentQuestion].options[2]}}
-          </label>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="radio">
+            <label ng-class="{'active': quiz.questions[quiz.currentQuestion].answer == 2}">
+              <input type="radio" name="optionsRadios" ng-value="2" ng-model="quiz.questions[quiz.currentQuestion].answer">
+              {{quiz.questions[quiz.currentQuestion].options[2]}}
+            </label>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="radio">
+            <label ng-class="{'active': quiz.questions[quiz.currentQuestion].answer == 3}">
+              <input type="radio" name="optionsRadios" ng-value="3" ng-model="quiz.questions[quiz.currentQuestion].answer">
+              {{quiz.questions[quiz.currentQuestion].options[3]}}
+            </label>
+          </div>
         </div>
       </div>
-      <div class="col-md-6">
-        <div class="radio">
-          <label>
-            <input type="radio" name="optionsRadios" ng-value="3" ng-model="quiz.questions[quiz.currentQuestion].answer">
-            {{quiz.questions[quiz.currentQuestion].options[3]}}
-          </label>
-        </div>
+      <div class="nav nav-footer">
+        <button
+          class="button_previous"
+          ng-show="quiz.currentQuestion > 0"
+          ng-click="quiz.previous()">Previous</button>
+        <button
+          class="pull-right button_next"
+          ng-disabled="quiz.questions[quiz.currentQuestion].answer == null"
+          ng-click="quiz.next()">Next</button>
       </div>
-    </div>
-    <div class="row">
-      <button
-        class="btn btn-default"
-        ng-show="quiz.currentQuestion > 0"
-        ng-click="quiz.previous()">Previous</button>
-      <button
-        class="btn btn-info"
-        ng-disabled="quiz.questions[quiz.currentQuestion].answer == null"
-        ng-click="quiz.next()">Next</button>
+    </div>  
+    <div class="quiz-pane" ng-show="quiz.counter != null">
+      <h1 ng-if="quiz.counter == 1">You got 1 correct answer!</h1>
+      <h1 ng-if="quiz.counter != 1">You got {{ quiz.counter }} correct answers!</h1>
+      <button 
+        class="button_restart" 
+        ng-click="quiz.restart()">Restart quiz!</button>
     </div>
   </div>
-  <div class="col-md-8" ng-show="quiz.counter != null">
-    <h1 ng-if="quiz.counter == 1">You got 1 correct answer!</h1>
-    <h1 ng-if="quiz.counter != 1">You got {{ quiz.counter }} correct answers!</h1>
-    <button ng-click="quiz.restart()">Restart quiz!</button>
-  </div>
-  <div class="col-md-2"></div>
+  <div class="col-md-3"></div>
 
 </div>
 
