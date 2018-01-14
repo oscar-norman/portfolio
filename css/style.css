@@ -55,6 +55,7 @@
   border: none;
   height: 4em;
   width: 10em;
+  box-shadow: 0.5vh 0.5vh 0.25vh #82a875;
 }
 .button_restart{
   background-color: #FFC842;
@@ -62,4 +63,5 @@
   border: none;
   height: 4em;
   width: 10em;
+  box-shadow: 0.5vh 0.5vh 0.25vh #82a875;
 }
