@@ -1,3 +1,3 @@
-# moment2-quiz
+# Moment 3 - Webstore
 
-School project using AngularJS and Bootstrap.
+School project building a webstore.
