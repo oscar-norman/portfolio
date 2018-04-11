@@ -7,28 +7,54 @@
 </head>
 <body class="body">
 
-	<div id="menu_left" class="overlay_left">
-	  <a href="javascript:void(0)" class="closebtn" onclick="closeLeft()">&times;</a>
-	  <div class="overlay-content">
-	    <a href="#">About</a>
-	    <a href="#">Services</a>
-	    <a href="#">Clients</a>
-	    <a href="#">Contact</a>
-	  </div>
+<div class="content">
+
+	<div class="navbar">
+
+		<span class="menu_icon" onclick="openLeft()">&#9776;</span>
+		<span class="glyphicon glyphicon-shopping-cart" id="shopping_cart" onclick="openRight()"></span>
+
+		<div class="title">
+			<img src="bilder/logo.png" alt="logo" class="logo_img">
+			<h1 class="logo_name">Store</h1>
+		</div>
+		
+		<div class="navleft">
+			<div id="menu_left" class="overlay_left">
+				<a href="javascript:void(0)" class="closebtn" onclick="closeLeft()">&times;</a>
+				<div class="overlay-content">
+					<a href="#">About</a>
+					<a href="#">Services</a>
+					<a href="#">Clients</a>
+					<a href="#">Contact</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="cart_right">
+			<div id="menu_right" class="overlay_right">
+				<a href="javascript:void(0)" class="closebtn" onclick="closeRight()">&times;</a>
+				<div class="overlay-content">
+					<a href="#">About</a>
+					<a href="#">Services</a>
+					<a href="#">Clients</a>
+					<a href="#">Contact</a>
+				</div>
+			</div>	
+		</div>
+
 	</div>
 
-	<div id="menu_right" class="overlay_right">
-	  <a href="javascript:void(0)" class="closebtn" onclick="closeRight()">&times;</a>
-	  <div class="overlay-content">
-	    <a href="#">About</a>
-	    <a href="#">Services</a>
-	    <a href="#">Clients</a>
-	    <a href="#">Contact</a>
-	  </div>
+	<div>
+		<img src="bilder/startsida.jpg" alt="logo" class="start_img">
 	</div>
 
+</div>
+
+
+<!--
 <span style="font-size:30px;cursor:pointer" onclick="openLeft()">&#9776;</span>
 <span class="glyphicon glyphicon-shopping-cart" style="font-size:30px;cursor:pointer;float: right;" onclick="openRight()"></span>
-
+-->
 </body>
 </html>
