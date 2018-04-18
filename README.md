@@ -1,3 +1,3 @@
-# Moment 3 - Webstore
+# Moment 3 - Portfolio
 
-School project building a webstore.
+School project building a portfolio.
