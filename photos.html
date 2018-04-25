@@ -9,7 +9,7 @@
 		<script src="parallax.min.js"></script>
 
 	</head>
-	<body>
+	<body onload="loadImages()">
 		
 		<ul>
 			<li class="name">Oscar Norman Photography</li>
@@ -20,52 +20,15 @@
 			<li><a href="index.html">Home</a></li>
 		</ul>
 
-		<div class="parallax" data-parallax="scroll" data-z-index="1" data-image-src="bilder/bild_23.jpg"></div>
+		<div class="parallax" data-parallax="scroll" data-z-index="1" data-image-src="bilder/bild_32.jpg"></div>
 
     <div class="content">
       <div class="slideshow">
-        <img src="bilder/bild_1.jpg" class="start-image">
+        <img src="bilder/bild_1.jpg" class="start-image" id="start-image">
       </div>
     </div>
 
-    <div class="gallery-wrapper">
-      <div class="gallery-image">
-        <img src="bilder/bild_1.jpg" id="bild_1">
-      </div>
-      <div class="gallery-image">
-        <img src="bilder/bild_2.jpg" id="bild_2">
-      </div>
-      <div class="gallery-image">
-        <img src="bilder/bild_3.jpg" id="bild_3">
-      </div>
-      <div class="gallery-image">
-        <img src="bilder/bild_4.jpg" id="bild_4">
-      </div>
-      <div class="gallery-image">
-        <img src="bilder/bild_5.jpg" id="bild_5">
-      </div>
-      <div class="gallery-image">
-        <img src="bilder/bild_6.jpg" id="bild_6">
-      </div>
-      <div class="gallery-image">
-        <img src="bilder/bild_7.jpg" id="bild_7">
-      </div>
-      <div class="gallery-image">
-        <img src="bilder/bild_8.jpg" id="bild_8">
-      </div>
-      <div class="gallery-image">
-        <img src="bilder/bild_9.jpg" id="bild_9">
-      </div>
-      <div class="gallery-image">
-        <img src="bilder/bild_10.jpg" id="bild_10">
-      </div>
-      <div class="gallery-image">
-        <img src="bilder/bild_11.jpg" id="bild_11">
-      </div>
-      <div class="gallery-image">
-        <img src="bilder/bild_12.jpg" id="bild_12">
-      </div>
-    </div>
+    <div class="gallery-wrapper" id="gallery-wrapper"></div>
 
 	</body>
 </html>
