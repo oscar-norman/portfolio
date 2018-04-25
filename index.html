@@ -24,7 +24,7 @@
 
     <div class="content">
       <div class="slideshow">
-        <img src="bilder/bild_1.jpg" class="start-image">
+        <img src="bilder/bild_1.jpg" class="start-image" id="start-image">
       </div>
     </div>
 
@@ -34,15 +34,19 @@
 
     <div class="gallery-wrapper-start">
       <div class="gallery-image-start">
-        <img src="bilder/bild_1.jpg" id="bild_1">
+        <img src="bilder/bild_1.jpg" id="bild_1" onclick="changeStartImage(this.src)">
       </div>
       <div class="gallery-image-start">
-        <img src="bilder/bild_2.jpg" id="bild_2">
+        <img src="bilder/bild_2.jpg" id="bild_2" onclick="changeStartImage(this.src)">
       </div>
       <div class="gallery-image-start">
-        <img src="bilder/bild_3.jpg" id="bild_3">
+        <img src="bilder/bild_3.jpg" id="bild_3" onclick="changeStartImage(this.src)">
       </div>
     </div>
+
+      <div class="link">
+        <a href="photos.html" class="button">See All Photos</a>
+      </div>
 
 	</body>
 </html>
