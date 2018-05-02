@@ -15,21 +15,22 @@
 		<li><a href="index.html">Home</a></li>
 	</ul>
 
-	<div>
-		<h1>Contact</h1>
-		<p></p>
+	<div class="contact-text">
+		<h1 id="title">Contact</h1>
+		<p id="text" >Want to work together?<br>
+			Fill in the form to send an email to me.</p>
 	</div>
 	<div class="contact">
 		<img src="bilder/bild_2.jpg" class="contact-image">
 
-		<form action="mailto:oscar-norman@hotmail.com?subject=From webpage" method="post" enctype="text/plain" class="form">
+		<form action="https://formspree.io/oscar-norman@hotmail.com" method="POST" class="form" id="contact-form">
 			Name:<br>
-			<input type="text" name="name" rows="10" class="text-box"><br>
-			E-mail:<br>
-			<input type="text" name="mail" rows="10" class="text-box"><br>
-			Comment:<br>
-			<textarea name="item3" cols="50" rows="10"></textarea><br><br>
-
+		    <input type="text" name="Name" id="inputName" class="text-box"><br>
+		    Email:<br>
+		    <input type="email" name="Email" id="inoutEmail" class="text-box"><br>
+			Message:<br>
+			<textarea name="Message" id="inputMessage" cols="50" rows="10"></textarea><br><br>
+			<input type="text" name="_gotcha" class="display-none">
 			<input type="submit" value="Send" class="button">
 			<input type="reset" value="Reset" class="button" id="reset-button">
 		</form>
