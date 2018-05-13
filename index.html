@@ -1,52 +1,53 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>Oscar Norman Photography</title>
-		<link rel="stylesheet" type="text/css" href="style.css">
-    <script type="text/javascript" src="script.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-		<script src="parallax.min.js"></script>
+<head>
+	<meta charset="utf-8">
+	<title>Oscar Norman Photography</title>
+  <link rel="icon" href="bilder/logo.png">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+  <script type="text/javascript" src="js/script.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="js/parallax.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+	<ul class="topnav" id="myTopnav">
+		<li class="name"><img src="bilder/logo.png"><span> Oscar Norman Photography </span></li>
+    <li class="icon"><a href="javascript:void(0);" onclick="myFunction()"><i class="fa fa-bars"></i></a></li>
+		<li class="menuitem"><a href="https://www.instagram.com/oscar.norman17">Instagram</a></li>
+		<li class="menuitem"><a href="contact.html">Contact</a></li>
+		<li class="menuitem"><a href="about.html">About</a></li>
+		<li class="menuitem"><a href="photos.html">Photos</a></li>
+		<li class="menuitem"><a href="index.html">Home</a></li>
+	</ul>
+    
+	<div class="parallax" data-parallax="scroll" data-z-index="1" data-image-src="bilder/bild_3.jpg"></div>
 
-	</head>
-	<body>
-		
-		<ul>
-			<li class="name">Oscar Norman Photography</li>
-			<li><a href="https://www.instagram.com/oscar.norman17">Instagram</a></li>
-			<li><a href="contact.html">Contact</a></li>
-			<li><a href="about.html">About</a></li>
-			<li><a href="photos.html">Photos</a></li>
-			<li><a href="index.html">Home</a></li>
-		</ul>
-
-		<div class="parallax" data-parallax="scroll" data-z-index="1" data-image-src="bilder/bild_3.jpg"></div>
-
-    <div class="content">
-      <div class="slideshow">
-        <img src="bilder/bild_1.jpg" class="start-image" id="start-image">
-      </div>
+  <div class="content">
+    <div class="slideshow">
+      <img src="bilder/bild_1.jpg" class="start-image" id="start-image">
     </div>
+  </div>
 
-    <div class="name-featured">
-      <h1><u>Featured Photos</u></h1>
+  <div class="name-featured">
+    <h1><u>Featured Photos</u></h1>
+  </div>
+
+  <div class="gallery-wrapper">
+    <div class="gallery-image">
+      <img src="bilder/bild_1.jpg" id="bild_1" onclick="changeStartImage(this.src)">
     </div>
-
-    <div class="gallery-wrapper-start">
-      <div class="gallery-image-start">
-        <img src="bilder/bild_1.jpg" id="bild_1" onclick="changeStartImage(this.src)">
-      </div>
-      <div class="gallery-image-start">
-        <img src="bilder/bild_2.jpg" id="bild_2" onclick="changeStartImage(this.src)">
-      </div>
-      <div class="gallery-image-start">
-        <img src="bilder/bild_3.jpg" id="bild_3" onclick="changeStartImage(this.src)">
-      </div>
+    <div class="gallery-image">
+      <img src="bilder/bild_2.jpg" id="bild_2" onclick="changeStartImage(this.src)">
     </div>
+    <div class="gallery-image">
+      <img src="bilder/bild_3.jpg" id="bild_3" onclick="changeStartImage(this.src)">
+    </div>
+  </div>
 
-      <div class="link">
-        <a href="photos.html" class="button">See All Photos</a>
-      </div>
+  <div class="link">
+    <a href="photos.html" class="button">See All Photos</a>
+  </div>
 
-	</body>
+</body>
 </html>
