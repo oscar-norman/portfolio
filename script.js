@@ -1,4 +1,3 @@
-
 function changeStartImage(src) {
 	document.getElementById("start-image").setAttribute("src", src);
 	document.getElementById("start-image").scrollIntoView({ block: 'end',  behavior: 'smooth' });
@@ -33,3 +32,12 @@ $(document).ready(function() {
     }
   });
 });
+
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
