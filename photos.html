@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>Oscar Norman Photography</title>
-		<link rel="stylesheet" type="text/css" href="style.css">
-    <script type="text/javascript" src="script.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-		<script src="parallax.min.js"></script>
+<head>
+	<meta charset="utf-8">
+	<title>Oscar Norman Photography</title>
+    <link rel="icon" href="bilder/logo.png">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/script.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="js/parallax.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body onload="loadImages()">
+	<ul class="topnav" id="myTopnav">
+		<li class="name"><img src="bilder/logo.png"><span> Oscar Norman Photography </span></li>
+    <li class="icon"><a href="javascript:void(0);" onclick="myFunction()"><i class="fa fa-bars"></i></a></li>
+		<li class="menuitem"><a href="https://www.instagram.com/oscar.norman17">Instagram</a></li>
+		<li class="menuitem"><a href="contact.html">Contact</a></li>
+		<li class="menuitem"><a href="about.html">About</a></li>
+		<li class="menuitem"><a href="photos.html">Photos</a></li>
+		<li class="menuitem"><a href="index.html">Home</a></li>
+	</ul>
 
-	</head>
-	<body onload="loadImages()">
-		
-		<ul>
-			<li class="name">Oscar Norman Photography</li>
-			<li><a href="https://www.instagram.com/oscar.norman17">Instagram</a></li>
-			<li><a href="contact.html">Contact</a></li>
-			<li><a href="about.html">About</a></li>
-			<li><a href="photos.html">Photos</a></li>
-			<li><a href="index.html">Home</a></li>
-		</ul>
-
-		<div class="parallax" data-parallax="scroll" data-z-index="1" data-image-src="bilder/bild_32.jpg"></div>
+	<div class="parallax" data-parallax="scroll" data-z-index="1" data-image-src="bilder/bild_32.jpg"></div>
 
     <div class="content">
       <div class="slideshow">
@@ -30,5 +31,5 @@
 
     <div class="gallery-wrapper" id="gallery-wrapper"></div>
 
-	</body>
+</body>
 </html>
